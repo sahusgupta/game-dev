@@ -1,6 +1,7 @@
 ﻿using System;
 /*
- * public class GD2_CH1to3
+ */
+public class GD2_CH1to3
 {
     public static (float, float) Totals(float[] c)
     {
@@ -22,15 +23,34 @@
         }
         float passed = 0;
         float total = 0;
-        bool[] pd = new bool[studs.Length];
+        List<string> pd = new List<string>();
         foreach ((string, float) c in studs) {
             passed += c.Item2 >= 3 ? 1 : 0;
             total += c.Item2;
         }
         for (int i = 0; i < studs.Length; i++) {
+            if (studs[i].Item2 >= 3) { pd.Add(studs[i].Item1); }
+        }
+        (string[], string[], float, float) ret = (names, names, passed / studs.Length, total / studs.Length);
+        return ret;
+    }
 
-        (string[], string[], float, float) ret = (names, names, passed / studs.Length, total / studs.Length)
+    public static int Gather(char[] farm)
+    {
+        int home = farm.IndexOf('H');
+        int curr = home;
+        int steps = 0;
+        while (curr > 0)
+        {
+            curr -= 1;
+            steps += 1;
+            if (farm[curr] == 'F')
+            {
+                home =
+            }
+        }
+        {
+
+        }
     }
 }
-
- */
